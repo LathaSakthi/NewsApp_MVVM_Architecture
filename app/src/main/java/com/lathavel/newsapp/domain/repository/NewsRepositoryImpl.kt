@@ -15,7 +15,7 @@ class NewsRepositoryImpl @Inject constructor(
 ): NewsRepository{
 
     override suspend fun getTopHeadLines(countryCode: String): Resource<List<Article>> {
-        //TODO: understand well with sealed class - RESOURCE
+
         return try{
             val response = apiService.getTopHeadlines(country = "us", apiKey = BuildConfig.NEWS_API_KEY)
             if(response.isSuccessful){
